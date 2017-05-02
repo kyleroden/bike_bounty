@@ -298,3 +298,6 @@ textarea {
 #results_list{
   list-style: none;
 }
+#map {
+  height: 78vh;
+}

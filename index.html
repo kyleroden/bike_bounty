@@ -2,38 +2,54 @@
 <html class="" lang="">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Biketown Bike Bounty Bot</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Biketown Bike Bounty Bot</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body>
-    <!--[if lt IE 8]>
+  <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <div id="wrapper">
-        <!-- Add your site or application content here -->
-        <p>Hello world! This site provides the current status of bike bounties available on the biketown bicycle sharing system in Portland, Oregon.</p>
-        <!--main content-->
-        <div id="content">
-          <h1>Current Bounties: <span id="total_bikes"><span></h1>
-          <ul id="results_list"></ul>
-        </div>
+  <div id="wrapper">
+    <!-- Add your site or application content here -->
+    <p>Hello world! This site provides the current status of bike bounties available on the biketown bicycle sharing system in Portland, Oregon.</p>
+    <!--main content-->
+    <div id="content">
+      <h4>Current Bounties: <span id="total_bikes"><span></h4>
+      <ul id="results_list"></ul>
     </div>
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')
-    </script>
-    <script src="js/main.js"></script>
+      <div id="map"></div>
+  </div>
+  <script type='text/javascript' src='js/constants.js'></script>
+  <script>
+      var url = config.SECRETURL;
+  </script>
+  <script>
+  if(document.body) {
+    //console.log(mykey, url)
+    const map_script = document.createElement('script');
+    map_script.src = url;
+    document.body.appendChild(map_script);
+    //console.log(url);
+  }
+
+  </script>
+  <!--<script src=" + '`${url}`' + " async defer></script>-->
+  <!--<script src=`${url}` + async defer></script>-->
+  <script src="js/main.js"></script>
+<!--
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyzRUaMA_jOVaidNRBlniZYdCpFCWNSH0&callback=initMap" async defer></script>
+-->
 </body>
 
 </html>
